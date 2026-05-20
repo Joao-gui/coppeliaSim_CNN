@@ -1,0 +1,3 @@
+.vscode
+.conda
+models/mobilenet_model.h5
