@@ -28,9 +28,14 @@ try:
 
         image = np.frombuffer(buf, dtype=np.uint8)
 
+        # resolution[1] = Altura, resolution[0] = Largura, 3 = Canais de cores
         image = image.reshape(resolution[1], resolution[0], 3)
 
+        # Corrige a orientação da imagem, Coppelia envia aa imagem de ponta cabeça
         image = cv.flip(image, 0)
+
+        # Correção de cores, Coppelia trabalha com imagem BRG não RGB
+        image = cv.cvtColor(image, cv.COLOR_RGB2BGR)
 
         # IA
         classe, confidence = predict_image(image)
@@ -47,9 +52,11 @@ try:
             # Posição da fonte
             (5, 40),
             cv.FONT_HERSHEY_SIMPLEX,
-            # Tamanho da fonte
+            # Tamanho da fonte (0.5=pequena, 1.0=grande, 2.0=enorme)
             0.75,
+            # Cor do texto BGR
             (0, 255, 0),
+            # Espessura da letra (1-fina, 2-média, 3-grossa)
             2
         )
 

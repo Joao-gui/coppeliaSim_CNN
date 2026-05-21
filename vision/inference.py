@@ -30,7 +30,7 @@ def predict_image(img):
     # predição
     prediction = model.predict(img, verbose=0)
 
-    # converter para classe
+    # converter para classe, transforma número da IA em texto prediction[0][0] é um numero de 0 a 1
     classe = classes[int(prediction[0][0] > 0.5)]
 
     # confiança
