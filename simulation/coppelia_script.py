@@ -22,7 +22,6 @@ sim.startSimulation()
 try:
 
     while (t := sim.getSimulationTime()) < 30:
-
         # capturar imagem
         buf, resolution = sim.getVisionSensorImg(sensor1Handle)
 
