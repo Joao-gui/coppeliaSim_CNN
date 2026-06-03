@@ -30,10 +30,14 @@ def predict_image(img):
     # predição
     prediction = model.predict(img, verbose=0)
 
+    valor = float(prediction[0][0])
+
+    #print(f"Valor bruto da rede: {valor}")
+
     # converter para classe, transforma número da IA em texto prediction[0][0] é um numero de 0 a 1
-    classe = classes[int(prediction[0][0] > 0.5)]
+    classe = classes[int(valor > 0.5)]
 
     # confiança
-    confidence = float(prediction[0][0])
+    confidence = valor
 
     return classe, confidence
