@@ -48,7 +48,7 @@ try:
         # Corrige a orientação da imagem, Coppelia envia aa imagem de ponta cabeça
         image = cv.flip(image, 0)
 
-        # Correção de cores, Coppelia trabalha com imagem BRG não RGB
+        # Correção de cores, Coppelia trabalha com imagem BGR não RGB
         image = cv.cvtColor(image, cv.COLOR_RGB2BGR)
 
         # IA
@@ -69,16 +69,16 @@ try:
 
         mask = cv.flip(mask, 0)
 
-        # Converte para escaka de cinza
+        # Converte para escala de cinza
         mask_gray = cv.cvtColor(mask,cv.COLOR_BGR2GRAY)
 
         # Contar pixels brancos
         white_pixels = cv.countNonZero(mask_gray)
 
         # print para mostrar quantidade de pixels se o objeto esta perto ou lonje (quanto maior mais perto)
-        print("Pixels brancos:", white_pixels)
+        #print("Pixels brancos:", white_pixels)
 
-        # Detectando cone e calvando posição
+        # Detectando cone e salvando posição
         if classe == "RED_CONE" and confidence < 0.10 and (t - last_mark_time) > 2 and white_pixels > 2350:
             #robot_pos = sim.getObjectPosition(robotHandle, -1)
             #add_cone(robot_pos)
