@@ -58,13 +58,13 @@ Essas características tornam a MobileNet mais adequada para este projeto do que
 ```text
 coppeliaSim_CNN/
 │
-├── cena_coppelia/              # Cena utilizada no Coppelia para o projeto
+├── cena_coppelia/        # Cena utilizada no Coppelia para o projeto
 ├── dataset/              # Pasta com as imagens de Treino/Teste/Validação
-├── mapping/          # Script do mapa gerado no coppleia
-├── models/            # Modelo gerado do treinamento da CNN
-├── notebooks/			# Notebooks de treino/geração de modelo e teste
-├── simulation/			# Script do RemoteAPI
-├── vision/				# Script da configuração do sensor de visão do robo
+├── mapping/              # Script do mapa gerado no coppleia
+├── models/               # Modelo gerado do treinamento da CNN
+├── notebooks/		  # Notebooks de treino/geração de modelo e teste
+├── simulation/		  # Script do RemoteAPI
+├── vision/		  # Script da configuração do sensor de visão do robo
 ├── .gitignore
 ├── main.py               # Script principal
 ├── requirements.txt
