@@ -160,6 +160,8 @@ Câmera do Robô
 4. A MobileNet realiza a classificação dos objetos.
 5. O sistema identifica a presença do Cone Vermelho e do Cubo Vermelho.
 6. Apenas as detecções do Cone Vermelho são registradas no gráfico, conforme os requisitos do desafio.
+7. ![gif1](imagens/gif1.gif)
+8. ![gif2](imagens/gif2.gif)
 
 ---
 
